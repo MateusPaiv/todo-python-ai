@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "todo-ai"
+version = "0.1.0"
+description = "API with AI to help you with your tasks"
+authors = ["MateusPaiv <mateuspaiva0118@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = "^2.0.38"
+psycopg2 = "^2.9.10"
+dotenv = "^0.9.9"
+fastapi = "^0.115.10"
+uvicorn = "^0.34.0"
+jose = "^1.0.0"
+bcrypt = "^4.3.0"
+asyncpg = "^0.30.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
