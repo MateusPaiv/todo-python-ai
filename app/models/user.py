@@ -17,6 +17,7 @@ class User(Base):
     email = Column(String(255), unique=True, nullable=False)
     password_hash = Column(Text, nullable=False)
     created_at = Column(TIMESTAMP, server_default=func.now())
+    phone = Column(String(15), nullable=True)
 
     todos = relationship("Todo", back_populates="user")
 
@@ -25,18 +26,20 @@ class UserCreate(BaseModel):
     name: str
     email: str
     password: str
+    phone: str
 
 
 class UserUpdate(BaseModel):
     name: str | None = None
     email: str | None = None
-    password: str | None = None
+    phone: str | None = None
 
 
 class UserResponse(BaseModel):
     id: str
     name: str
     email: str
+    phone: str | None = None
     created_at: datetime
 
     class Config:
@@ -50,6 +53,7 @@ class UserDelete(BaseModel):
 class UserRead(BaseModel):
     name: str
     email: str
+    phone: str | None = None
     created_at: datetime
 
     class Config:
